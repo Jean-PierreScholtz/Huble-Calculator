@@ -1,0 +1,226 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    background-color: #330033;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400' viewBox='0 0 800 800'%3E%3Cg fill='none' stroke='%23404' stroke-width='1'%3E%3Cpath d='M769 229L1037 260.9M927 880L731 737 520 660 309 538 40 599 295 764 126.5 879.5 40 599-197 493 102 382-31 229 126.5 79.5-69-63'/%3E%3Cpath d='M-31 229L237 261 390 382 603 493 308.5 537.5 101.5 381.5M370 905L295 764'/%3E%3Cpath d='M520 660L578 842 731 737 840 599 603 493 520 660 295 764 309 538 390 382 539 269 769 229 577.5 41.5 370 105 295 -36 126.5 79.5 237 261 102 382 40 599 -69 737 127 880'/%3E%3Cpath d='M520-140L578.5 42.5 731-63M603 493L539 269 237 261 370 105M902 382L539 269M390 382L102 382'/%3E%3Cpath d='M-222 42L126.5 79.5 370 105 539 269 577.5 41.5 927 80 769 229 902 382 603 493 731 737M295-36L577.5 41.5M578 842L295 764M40-201L127 80M102 382L-261 269'/%3E%3C/g%3E%3Cg fill='%23505'%3E%3Ccircle cx='769' cy='229' r='5'/%3E%3Ccircle cx='539' cy='269' r='5'/%3E%3Ccircle cx='603' cy='493' r='5'/%3E%3Ccircle cx='731' cy='737' r='5'/%3E%3Ccircle cx='520' cy='660' r='5'/%3E%3Ccircle cx='309' cy='538' r='5'/%3E%3Ccircle cx='295' cy='764' r='5'/%3E%3Ccircle cx='40' cy='599' r='5'/%3E%3Ccircle cx='102' cy='382' r='5'/%3E%3Ccircle cx='127' cy='80' r='5'/%3E%3Ccircle cx='370' cy='105' r='5'/%3E%3Ccircle cx='578' cy='42' r='5'/%3E%3Ccircle cx='237' cy='261' r='5'/%3E%3Ccircle cx='390' cy='382' r='5'/%3E%3C/g%3E%3C/svg%3E");;
+    box-sizing: border-box;
+    outline: none !important;
+    font-family: Poppins, sans-serif;
+    color: white;
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    
+}
+.calculator{
+    border: 12px solid lightgrey !important;
+    box-shadow: 2px 2px 13px rgba(0,0,0,0), 
+    2px 2px 13px rgba(0,0,0,0,);
+    border-radius: 13px;
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 66px);
+    color: white !important;
+    background: rgba(5, 136, 230, 0.478) !important;
+    width: 480px;
+    height: 590px;
+    transform: translateX(50px) translateY(-50px)
+}
+input{
+    border: none !important;
+    grid-column: span 4;
+    height: 70px;
+    width: 264px;
+    box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+    color: rgb(88, 85, 85);
+    border-radius: 32px;
+    background-color: rgb(235, 224, 224) !important;
+    text-align: end;
+    margin: 40px 0px 30px 0px;
+    padding: 20px;
+    font-size: 20px;
+    background: white !important;
+}
+button{
+    transform: scale(1.2);
+    
+    color: rgb(83, 80, 80);
+    margin: 12px 1px 12px 12px;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: bold;
+    background: white !important;
+    height: 40px;
+    border: none !important;
+    box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 13px 12px 66px 0px rgba(0,0,0,0.75);
+}
+.equal{
+    width: 120px;
+    height: 50px !important;
+    transform: translatex(2px) translateY(-5px);
+    border-radius: 40px;
+}
+@keyframes animate {
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background: #3b3f81;
+    overflow: hidden;
+}
+.background li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    animation: animate 8s linear infinite;
+}
+
+
+
+
+.background li:nth-child(0) {
+    left: 18%;
+    width: 216px;
+    height: 216px;
+    bottom: -216px;
+    animation-delay: 1s;
+}
+.background li:nth-child(1) {
+    left: 14%;
+    width: 275px;
+    height: 275px;
+    bottom: -275px;
+    animation-delay: 3s;
+}
+.background li:nth-child(2) {
+    left: 61%;
+    width: 116px;
+    height: 116px;
+    bottom: -116px;
+    animation-delay: 1s;
+}
+.background li:nth-child(3) {
+    left: 59%;
+    width: 312px;
+    height: 312px;
+    bottom: -312px;
+    animation-delay: 10s;
+}
+.background li:nth-child(4) {
+    left: 62%;
+    width: 162px;
+    height: 162px;
+    bottom: -162px;
+    animation-delay: 17s;
+}
+.background li:nth-child(5) {
+    left: 60%;
+    width: 257px;
+    height: 257px;
+    bottom: -257px;
+    animation-delay: 7s;
+}
+.background li:nth-child(6) {
+    left: 63%;
+    width: 292px;
+    height: 292px;
+    bottom: -292px;
+    animation-delay: 21s;
+}
+.background li:nth-child(7) {
+    left: 32%;
+    width: 112px;
+    height: 112px;
+    bottom: -112px;
+    animation-delay: 17s;
+}
+.background li:nth-child(8) {
+    left: 38%;
+    width: 310px;
+    height: 310px;
+    bottom: -310px;
+    animation-delay: 10s;
+}
+.background li:nth-child(9) {
+    left: 9%;
+    width: 221px;
+    height: 221px;
+    bottom: -221px;
+    animation-delay: 1s;
+}
+.background li:nth-child(10) {
+    left: 25%;
+    width: 216px;
+    height: 216px;
+    bottom: -216px;
+    animation-delay: 3s;
+}
+.background li:nth-child(11) {
+    left: 71%;
+    width: 124px;
+    height: 124px;
+    bottom: -124px;
+    animation-delay: 27s;
+}
+.background li:nth-child(12) {
+    left: 32%;
+    width: 119px;
+    height: 119px;
+    bottom: -119px;
+    animation-delay: 43s;
+}
+.background li:nth-child(13) {
+    left: 70%;
+    width: 304px;
+    height: 304px;
+    bottom: -304px;
+    animation-delay: 50s;
+}
+.background li:nth-child(14) {
+    left: 70%;
+    width: 294px;
+    height: 294px;
+    bottom: -294px;
+    animation-delay: 40s;
+}
+.background li:nth-child(15) {
+    left: 17%;
+    width: 250px;
+    height: 250px;
+    bottom: -250px;
+    animation-delay: 68s;
+}
+.background li:nth-child(16) {
+    left: 83%;
+    width: 325px;
+    height: 325px;
+    bottom: -325px;
+    animation-delay: 4s;
+}
